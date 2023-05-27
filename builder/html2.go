@@ -107,5 +107,5 @@ func main() {
 	}
 	end := time.Now().UnixMilli()
 	fmt.Println(html.String())
-	fmt.Printf("Go: %vms\n", end-start)
+	fmt.Printf("Go2: %vms\n", end-start)
 }
