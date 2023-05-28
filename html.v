@@ -1,6 +1,7 @@
 module main
 
 import time
+//import strings
 
 type Attr = map[string]string
 

@@ -7,15 +7,20 @@ $ ./benchmark.sh
 ## Result
 
 ```
-Go: 3744ms
-Go2 (strings.Builder): 4497ms
-V: 2.221s
-V (-prod): 659.877ms
-V2 (strings.Builder): 1.779s
-V2 (-prod): 574.895ms
-Dart: 1725ms
-Nim: 3.417453707
-Nim2 (stringbuilder.nim): 4.751443744
+Go: 2538ms
+Go2: 2597ms
+
+V: 772.060ms
+V2: 549.858ms
+
+Dart: 1995ms
+Dart2: 1350ms
+
+Nim: 3612ms
+Nim2: 4549ms
+
+Python: 1361ms
+JS: 896ms
 PHP: 399ms
 ```
 

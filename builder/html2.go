@@ -87,11 +87,9 @@ func nodes(nodes ...string) string {
 
 func main() {
 	start := time.Now().UnixMilli()
-	//html := ""
-	html := strings.Builder{}
+	html := ""
 	for i := 0; i < 100_000; i++ {
-		html.Reset()
-		html.WriteString(nodes(
+		html = nodes(
 			inode("!doctype", attr{"html": ""}),
 			anode("html", attr{"lang": "en"},
 				node("head",
@@ -103,9 +101,9 @@ func main() {
 					tnode("span", "Abc & def"),
 				),
 			),
-		))
+		)
 	}
 	end := time.Now().UnixMilli()
-	fmt.Println(html.String())
+	fmt.Println(html)
 	fmt.Printf("Go2: %vms\n", end-start)
 }

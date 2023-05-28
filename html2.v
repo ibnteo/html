@@ -6,7 +6,7 @@ import strings
 type Attr = map[string]string
 
 pub fn text(str string) string {
-	return str.replace_each(['<', '&lt;', '>', '&gt;', '&', '&amp;', '"', '&quot;'])
+	return str.replace_each(['&', '&amp;', '<', '&lt;', '>', '&gt;', '"', '&quot;'])
 }
 
 fn tnode(tag string, t string) string {
@@ -98,12 +98,9 @@ pub fn nodes(nodes ...string) string {
 
 fn main() {
 	start := time.now()
-	//mut html := ''
-	mut html := strings.new_builder(0)
+	mut html := ''
 	for i:=0; i<100_000; i++ {
-		html.clear()
-		//html = nodes(
-		html.write_string(nodes(
+		html = nodes(
 			inode('!doctype', {'html':''}),
 			anode('html', {'lang':'en'},
 				node('head',
@@ -115,9 +112,9 @@ fn main() {
 					tnode('span', 'Abc & def'),
 				),
 			),
-		))
+		)
 	}
 	end := time.now()
-	println(html.str())
+	println(html)
 	println('V2: ${end-start}')
 }
