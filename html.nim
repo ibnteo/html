@@ -35,7 +35,7 @@ proc nodes(nodes: varargs[string]): string =
     for node in nodes:
         result = result & node
 
-var tstart = cpuTime()
+let tstart = cpuTime()
 var html = ""
 for i in countup(0, 100_000):
     html = nodes(
@@ -51,6 +51,6 @@ for i in countup(0, 100_000):
             ),
         ),
     )
-var tend = cpuTime()
+let tend = cpuTime()
 echo html, "\n"
 echo "Nim: ", tend - tstart, "\n"

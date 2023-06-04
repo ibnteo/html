@@ -9,8 +9,8 @@ v html2.v -prod && ./html2 && rm html2
 dart html.dart
 dart html2.dart
 
-nim compile --run html.nim
-nim compile --run html2.nim
+nim -d:release compile --run html.nim
+nim -d:release compile --run html2.nim
 
 python3 html.py
 node html.js

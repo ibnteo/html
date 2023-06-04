@@ -70,7 +70,7 @@ proc nodes(nodes: varargs[string]): string =
         b.append(node)
     result = b.destroy()
 
-var tstart = cpuTime()
+let tstart = cpuTime()
 var html = newStringBuilder(0)
 for i in countup(0, 100_000):
     html = newStringBuilder(0)
@@ -87,6 +87,6 @@ for i in countup(0, 100_000):
             ),
         ),
     ))
-var tend = cpuTime()
+let tend = cpuTime()
 echo html.destroy(), "\n"
 echo "Nim2: ", tend - tstart, "\n"

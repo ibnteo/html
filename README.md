@@ -16,8 +16,8 @@ V2: 549.858ms
 Dart: 1995ms
 Dart2: 1350ms
 
-Nim: 3612ms
-Nim2: 4549ms
+Nim: 312ms
+Nim2: 422ms
 
 Python: 1361ms
 JS: 896ms
